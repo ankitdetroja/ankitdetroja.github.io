@@ -1,0 +1,15 @@
+.lifePageContent {
+  height: 100vh;
+  width: 100vw;
+  background-color: #222222;
+  display: none;
+  position: relative;
+  text-align: center;
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+  }
+}

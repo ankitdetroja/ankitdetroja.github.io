@@ -1,0 +1,149 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 1;
+  &Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 2.5vw 0 2.5vw;
+    &Logo {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      &:hover {
+        .hiThere {
+          opacity: 1;
+        }
+      }
+      .hiThere {
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        top: 112px;
+        right: -55px;
+        width: 200px;
+        text-align: center;
+        color: $color-white;
+        border: 2px solid $color-white;
+        border-radius: 10px;
+        padding: 5px;
+        @include breakpoint-down(medium) {
+          right: -90px;
+        }
+        span {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid $color-white;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent;
+          top: -22px;
+          left: 82px;
+          @include breakpoint-down(medium) {
+            left: 50px;
+          }
+        }
+      }
+    }
+    &Link {
+      vertical-align: baseline;
+      font-size: 20px;
+      font-weight: 600;
+      word-spacing: -3px;
+      a {
+        &:not(:last-child) {
+          margin-right: 35px;
+        }
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 3px;
+          display: inline-block;
+          background-color: $color-white;
+          transform: translate(-100%, 18px);
+          transition: all 0.5s ease-in-out;
+        }
+        &:hover {
+          &::before {
+            transform: translate(100%, 18px);
+          }
+        }
+      }
+    }
+    .mobileMenuBtn {
+      span {
+        width: 15px !important;
+        height: 15px !important;
+        background-color: $color-white;
+        display: inline-block;
+        transform: translate(0, -2px);
+      }
+      a {
+        margin-right: 5px;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 3px;
+          display: inline-block;
+          background-color: $color-white;
+          transform: translate(-100%, 22px);
+          transition: all 0.5s ease-in-out;
+        }
+        &:hover {
+          &::before {
+            transform: translate(100%, 22px);
+          }
+        }
+      }
+    }
+    .mobileMenu {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100vw;
+      height: 100vh;
+      background-color: $color-mobileMenuBg;
+      &CloseBtn {
+        text-align: right;
+        ion-icon {
+          font-size: 55px;
+          color: $color-white;
+        }
+      }
+      &Links {
+        font-size: 40px;
+        text-align: center;
+        height: calc(100% - 158px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        a {
+          display: block;
+          color: $color-white;
+          font-weight: 600;
+          &:first-child {
+            padding-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}

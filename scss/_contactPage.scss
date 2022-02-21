@@ -1,0 +1,98 @@
+.contactPageContent {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #222222;
+  display: none;
+  @include breakpoint-down(medium) {
+    // height: 100%;
+  }
+  overflow: hidden;
+  &Div {
+    padding: 180px 150px 0 150px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // align-items: center;
+    // background-color: sandybrown;
+    @include breakpoint-down(medium) {
+      padding: 150px 0 0 0;
+    }
+    &Header {
+      flex: none;
+      opacity: 0;
+      .cpch {
+        font-family: IvarDisplay;
+        display: inline-block;
+        font-size: 150px;
+        transform: scale(1.3, 1);
+        letter-spacing: 2px;
+        // padding-left: 50px;
+        @include breakpoint-down(medium) {
+          width: 100%;
+          text-align: center;
+          transform: none;
+          font-size: 50px;
+          padding-left: 0px;
+        }
+      }
+    }
+    &Details {
+      flex: none;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      flex-direction: column;
+      padding: 180px 0 0 0;
+
+      @include breakpoint-down(medium) {
+        padding: 30px 0;
+        align-items: center;
+        text-align: center;
+      }
+      &Item {
+        a {
+          font-size: 22px;
+          color: #ffffff59;
+          display: inline-block;
+          position: relative;
+          &::before {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background-color: $color-white;
+            position: relative;
+            display: block;
+            border-radius: 10px;
+            bottom: -27px;
+            transition: all 0.5s ease-in-out;
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+          }
+          @include breakpoint-down(medium) {
+            font-size: 15px;
+            padding-bottom: 20px;
+          }
+        }
+        &Header {
+          font-size: 25px;
+          color: $color-white;
+          padding-bottom: 5px;
+          @include breakpoint-down(medium) {
+            font-size: 18px;
+          }
+        }
+      }
+      .cpcddi1,
+      .cpcddi2,
+      .cpcddi3 {
+        transform: translateX(150px);
+        opacity: 0;
+      }
+    }
+  }
+}
